@@ -1,3 +1,118 @@
-div {
-  
+/* app.component.css */
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.user-info {
+  margin-bottom: 20px;
+}
+
+.user-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.detail-title {
+  font-weight: bold;
+}
+
+.detail-value {
+  white-space: nowrap; /* Prevent value from sliding */
+}
+
+.button-container {
+  margin-bottom: 20px;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+  background-color: #0056b3;
+}
+
+.logout-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #dc3545;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #c82333;
+}
+
+.show-admin-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff; /* Matches Refresh Token button */
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.show-admin-button:hover {
+  background-color: #0056b3; /* Matches Refresh Token button */
+}
+
+.login-button-container {
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  height: 100%; /* Ensure full height */
+}
+
+.login-button-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #28a745;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button-container button:hover {
+  background-color: #218838;
+}
+
+.textarea-container {
+  /* Font styles */
+  font-family: monospace; /* Example font family */
+  font-size: 14px;
+
+  /* Colors */
+  background-color: #f5f5f5;
+  color: #333;
+
+  /* Dimensions */
+  width: 100%; /* Stretches to full width */
+
+  /* Border */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  /* Padding */
+  padding: 10px;
+
+  /* Other options */
+  resize: none; /* Disable resizing */
+  overflow-x: auto; /* Enable horizontal scrolling if content overflows */
 }

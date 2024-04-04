@@ -1,9 +1,41 @@
-<div *ngIf="!isLoading">
-  <div *ngIf="user">
-    <div>User name: {{user?.name}}</div>
-  </div>
-  <div *ngIf="!user">
-    <button (click)="loginWithRedirect()">Login with redirect</button>
-  </div>
+<!-- File: app.component.html -->
 
+<div class="container">
+  <div *ngIf="!isLoading">
+    <div *ngIf="user" class="user-info">
+      <img class="user-profile-photo" [src]="user?.profilePictureUrl" alt="User Profile Photo">
+      <br/>
+      <div class="user-name">User name:</div>
+      <div class="user-value">{{ user?.name }}</div>
+      <br/>
+      <div class="user-details">
+        <div class="detail-title">Active Tenant ID:</div>
+        <div class="detail-value">{{ user?.tenantId }}</div>
+        <br/>
+        <div class="detail-title">User JWT:</div>
+        <textarea class="textarea-container" rows="4" readonly>{{ user?.accessToken }}</textarea>
+        <br/>
+        <br/>
+        <div class="detail-title">
+          Switch Tenant:
+        </div>
+        <div class="detail-value">
+          <select [(ngModel)]="selectedTenantId" (change)="switchTenant()">
+            <option *ngFor="let tenantId of user?.tenantIds" [value]="tenantId">
+              {{ tenantId }}
+            </option>
+          </select>
+        </div>
+        <br/>
+      </div>
+      <div class="button-container">
+        <show-admin-portal></show-admin-portal>
+        <button (click)="refreshToken()">Refresh Token</button>
+      </div>
+      <button class="logout-button" (click)="logOut()">Log Out</button>
+    </div>
+    <div *ngIf="!user" class="login-button-container">
+      <button (click)="loginWithRedirect()">Login with Redirect</button>
+    </div>
+  </div>
 </div>
