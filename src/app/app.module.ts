@@ -30,7 +30,8 @@ import { FormsModule } from '@angular/forms';
         },
         authOptions: {
           // disableSilentRefresh: true, // disables token refreshes
-          enableSessionPerTenant: true // enables separate sessions for each new tab
+          enableSessionPerTenant: true, // enables separate sessions for each new tab
+          keepSessionAlive: true // Uncomment this in order to maintain the session alive
         },
         hostedLoginBox: true,
       }
