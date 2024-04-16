@@ -21,8 +21,8 @@
         </div>
         <div class="detail-value">
           <select [(ngModel)]="selectedTenantId" (change)="switchTenant()">
-            <option *ngFor="let tenantId of user?.tenantIds" [value]="tenantId">
-              {{ tenantId }}
+            <option *ngFor="let tenant of tenantState?.tenants" [value]="tenant.tenantId">
+              {{ tenant.name }}
             </option>
           </select>
         </div>
