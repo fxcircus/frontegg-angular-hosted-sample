@@ -60,7 +60,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   logOut(): void {
-    setTabTenantInSessionStorage("");
+    sessionStorage.removeItem('FRONTEGG_SEPARATE_TABS_BY_TENANT')
     const baseUrl = ContextHolder.getContext().baseUrl;
     window.location.href = `${baseUrl}/oauth/logout?post_logout_redirect_uri=${window.location}`;
   }
