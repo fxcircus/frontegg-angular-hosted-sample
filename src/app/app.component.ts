@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { FronteggAppService, FronteggAuthService, ContextHolder } from '@frontegg/angular';
-import { ITeamUserRole, setTabTenantInSessionStorage } from '@frontegg/rest-api';
+import { ITeamUserRole } from '@frontegg/rest-api';
 
 @Component({
   selector: 'app-root',
