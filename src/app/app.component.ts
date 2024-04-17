@@ -29,16 +29,28 @@ export class AppComponent implements OnInit, OnDestroy {
       const newRoles: ITeamUserRole[] = teamState.roles.filter((role: ITeamUserRole) => role.name !== 'New');
       this.fronteggAuthService.setTeamState({ roles: newRoles });
     });
-
+  
     this.fronteggAuthService.user$.subscribe((user) => {
       this.user = user;
+      this.updateSelectedTenantId();
     });
-
+  
     this.fronteggAuthService.loadTenants();
     this.fronteggAuthService.tenantsState$.subscribe((tenants) => {
       this.tenantState = tenants;
-      console.log('Tenant State Loaded:', this.tenantState);  // Log tenant state after loading
+      console.log('Tenant State Loaded:', this.tenantState);
+      this.updateSelectedTenantId();
     });
+  }
+
+  private updateSelectedTenantId() {
+    // Ensure both user and tenantState are loaded
+    if (this.user && this.tenantState) {
+      const activeTenant = this.tenantState.tenants.find((tenant: any) => tenant.tenantId === this.user.tenantId);
+      if (activeTenant) {
+        this.selectedTenantId = activeTenant.tenantId;
+      }
+    }
   }
 
   switchTenant(): void {
